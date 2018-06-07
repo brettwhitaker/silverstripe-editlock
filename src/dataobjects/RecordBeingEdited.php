@@ -29,7 +29,7 @@ class RecordBeingEdited extends DataObject implements PermissionProvider
     );
 
     private static $has_one = array(
-        'Editor' => 'Member'
+        'Editor' => Member::class
     );
 
 
