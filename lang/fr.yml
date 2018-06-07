@@ -1,5 +1,5 @@
 fr:
-  RecordBeingEdited:
+  Sheadawson\Editlock\Model\RecordBeingEdited:
     LOCKEDMESSAGE: "Désolé, cette %s est actuellement en cours d'édition par %s. Pour éviter les conflits et la perte de données, l'édition sera verrouillée jusqu'à ce qu'elles soient terminées."
     EDITANYWAY: 'Je comprends les risques, %s éditer de toute façon %s.'
     PERMISSION_EDITANYWAY_DESCRIPTION: "Modifier un enregistrement qu'un autre utilisateur modifie."
