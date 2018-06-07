@@ -41,7 +41,7 @@ class EditLockControllerExtension extends Extension
         }
 
         // check if all classes should be locked by default or a certain list
-        $lockedClasses = Config::inst()->get('EditLockControllerExtension', 'lockedClasses');
+        $lockedClasses = Config::inst()->get(EditLockControllerExtension::class, 'lockedClasses');
         if (!empty($lockedClasses)) {
             if (!in_array($record->ClassName, $lockedClasses)) {
                 return $form;
