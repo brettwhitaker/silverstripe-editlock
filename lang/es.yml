@@ -1,4 +1,4 @@
-fr:
+es:
   Sheadawson\Editlock\Model\RecordBeingEdited:
     LOCKEDMESSAGE: "Lo sentimos, %s esta siendo editado por %s. Para evitar conflictos y perdidas de datos, editar estará deshabilitado hasta que este usuario termine de editar."
     EDITANYWAY: 'Comprendo los riesgos, %s editar de todos modos %s.'
