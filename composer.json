@@ -28,8 +28,8 @@
 	"extra": {
 		"installer-name": "editlock",
         "expose": [
-            "sheadawson/editlock/images",
-            "sheadawson/editlock/javascript"
+            "images",
+            "javascript"
         ]
 	}
 }
