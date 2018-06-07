@@ -32,6 +32,8 @@ class RecordBeingEdited extends DataObject implements PermissionProvider
         'Editor' => Member::class
     );
 
+    private static $table_name = 'Editlock_RecordBeingEdited';
+
 
     /**
      * Generates the edit lock warning message displayed to the user
@@ -98,9 +100,9 @@ class RecordBeingEdited extends DataObject implements PermissionProvider
     {
         return array(
             'RECORDBEINGEDITED_EDITANYWAY' => array(
-                'name' => __CLASS__ .   _t('.PERMISSION_EDITANYWAY_DESCRIPTION', 'Edit a record that another user is editing'),
-                'help' => __CLASS__ .   _t('.PERMISSION_EDITANYWAY_HELP',  'Let\'s the user dismiss the edit lock and warning'),
-                'category' => __CLASS__ .   _t('.PERMISSION_EDITANYWAY_CATEGORY', 'Content permissions'),
+                'name' =>_t( __CLASS__ . '.PERMISSION_EDITANYWAY_DESCRIPTION', 'Edit a record that another user is editing'),
+                'help' =>_t( __CLASS__ . '.PERMISSION_EDITANYWAY_HELP',  'Let\'s the user dismiss the edit lock and warning'),
+                'category' => _t(__CLASS__ . '.PERMISSION_EDITANYWAY_CATEGORY', 'Content permissions'),
                 'sort' => 100
             )
         );
