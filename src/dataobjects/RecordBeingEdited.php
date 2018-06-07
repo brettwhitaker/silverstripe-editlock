@@ -9,7 +9,9 @@ namespace Sheadawson\Editlock\Model;
 
 
 use SilverStripe\Control\Controller;
+use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Control\Session;
+use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Forms\FormField;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Member;
@@ -83,18 +85,22 @@ class RecordBeingEdited extends DataObject implements PermissionProvider
             return false;
         }
 
+        $request = Injector::inst()->get(HTTPRequest::class);
+        $session = $request->getSession();
+
         $sessionVar = 'EditAnyway_' . Security::getCurrentUser()->ID . '_' . $this->ID;
         if (Controller::curr()->getRequest()->getVar('editanyway') == '1') {
-            Session::set($sessionVar, true);
+            $session->set($sessionVar, true);
+
             return true;
         }
-        return Session::get($sessionVar) ? true : false;
+        return $session->get($sessionVar) ? true : false;
     }
 
 
 
     /**
-     * @return Arary
+     * @return Array
      **/
     public function providePermissions()
     {
