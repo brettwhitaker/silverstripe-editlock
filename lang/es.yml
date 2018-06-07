@@ -1,0 +1,7 @@
+fr:
+  Sheadawson\Editlock\Model\RecordBeingEdited:
+    LOCKEDMESSAGE: "Lo sentimos, %s esta siendo editado por %s. Para evitar conflictos y perdidas de datos, editar estará deshabilitado hasta que este usuario termine de editar."
+    EDITANYWAY: 'Comprendo los riesgos, %s editar de todos modos %s.'
+    PERMISSION_EDITANYWAY_DESCRIPTION: "Editar un registro que otro usuario esta editando."
+    PERMISSION_EDITANYWAY_HELP: "Dejar que los usuarios ignoren el mensaje de edición bloqueada."
+    PERMISSION_EDITANYWAY_CATEGORY: 'Permisos de contenido'
