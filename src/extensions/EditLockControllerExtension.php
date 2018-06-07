@@ -14,6 +14,7 @@ use SilverStripe\Core\Extension;
 use SilverStripe\Forms\Form;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Member;
+use SilverStripe\Security\Security;
 
 class EditLockControllerExtension extends Extension
 {
@@ -116,7 +117,7 @@ class EditLockControllerExtension extends Extension
         $existing = RecordBeingEdited::get()->filter(array(
             'RecordID' => $id,
             'RecordClass' => $class,
-            'EditorID' => Member::currentUserID()
+            'EditorID' => Security::getCurrentUser()->ID
         ))->first();
 
         if ($existing) {
@@ -125,7 +126,7 @@ class EditLockControllerExtension extends Extension
             $lock = RecordBeingEdited::create(array(
                 'RecordID' => $id,
                 'RecordClass' => $class,
-                'EditorID' => Member::currentUserID()
+                'EditorID' => Security::getCurrentUser()->ID
             ));
             $lock->write();
         }
