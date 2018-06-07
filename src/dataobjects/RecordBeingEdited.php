@@ -15,13 +15,14 @@ use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\PermissionProvider;
+use SilverStripe\Security\Security;
 
 class RecordBeingEdited extends DataObject implements PermissionProvider
 {
 
     private static $singular_name = "Record Being Edited";
     private static $plural_name = "Records Being Edited";
-    
+
     private static $db = array(
         'RecordClass' => 'Varchar',
         'RecordID' => 'Int',
@@ -72,7 +73,7 @@ class RecordBeingEdited extends DataObject implements PermissionProvider
 
     /**
      * Checks to see if the current user can and has elected to edit the record anyway
-     * @return Boolaen
+     * @return Boolean
      **/
     public function isEditingAnyway()
     {
@@ -80,7 +81,7 @@ class RecordBeingEdited extends DataObject implements PermissionProvider
             return false;
         }
 
-        $sessionVar = 'EditAnyway_' . Member::currentUserID() . '_' . $this->ID;
+        $sessionVar = 'EditAnyway_' . Security::getCurrentUser()->ID . '_' . $this->ID;
         if (Controller::curr()->getRequest()->getVar('editanyway') == '1') {
             Session::set($sessionVar, true);
             return true;
