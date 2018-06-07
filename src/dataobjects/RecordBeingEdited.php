@@ -55,7 +55,7 @@ class RecordBeingEdited extends DataObject implements PermissionProvider
         );
 
         if ($this->canEditAnyway()) {
-            $editAnywayLink = Controller::join_links(Controller::curr()->getRequest()->requestVar('url'), '?editanyway=1');
+            $editAnywayLink = Controller::join_links(Controller::curr()->getRequest()->getURL(), '?editanyway=1');
             $message .= "<span style='float:right'>";
             $message .= sprintf(_t(__CLASS__ .  '.EDITANYWAY', 'I understand the risks, %s edit anyway %s'), "<a href='$editAnywayLink'>", "</a>");
             $message .= "</span>";
