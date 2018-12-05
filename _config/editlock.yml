@@ -6,5 +6,3 @@ SilverStripe\Admin\LeftAndMain:
 GridFieldDetailForm_ItemRequest:
   extensions:
     - Sheadawson\Editlock\Extension\EditLockControllerExtension
-Sheadawson\Editlock\Extension\EditLockControllerExtension:
-  lockedClasses:
